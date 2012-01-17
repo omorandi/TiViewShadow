@@ -12,7 +12,7 @@ The module is licensed under the MIT license.
 
 ### BUILD ###
 
-First, you must have your XCode and Titanium Mobile SDKs in place, and have at least read the first few pages of the [iOS Module Developer Guide](http://developer.appcelerator.com/guides/en/module_ios.html) from Appcelerator.
+First, you must have your XCode and Titanium Mobile SDKs in place, and have at least read the first few pages of the [iOS Module Developer Guide](https://wiki.appcelerator.org/display/guides/iOS+Module+Development+Guide) from Appcelerator.
 
 The build process can be launched using the build.py script that you find in the module's code root directory. 
 
