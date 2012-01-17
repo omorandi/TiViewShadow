@@ -5,7 +5,6 @@
 This module extends the Ti SDK, allowing to add "drop shadow" functionalities to any View object you create.
 
 The code implementing this feature has been originally posted by Javier Rayon [here](http://developer.appcelerator.com/question/130784/trick-drop-real-shadows-in-titanium-ios). 
-I simply wrapped in an iOS module.
 
 The module is licensed under the MIT license.
 
