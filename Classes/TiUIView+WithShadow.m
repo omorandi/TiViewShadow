@@ -14,6 +14,10 @@
     {
         self.layer.masksToBounds = NO; 
         
+
+
+
+
         if ([args objectForKey:@"shadowOffset"] != nil) {
             CGPoint p = [TiUtils pointValue: [args objectForKey:@"shadowOffset"]];
             CGSize shadowOffset = {p.x,p.y};
@@ -26,6 +30,20 @@
         if ([args objectForKey:@"shadowOpacity"] != nil) {
             self.layer.shadowOpacity = [TiUtils floatValue:[args objectForKey:@"shadowOpacity"]];            
         }
+
+        if ([args objectForKey:@"shadowColor"] != nil) {
+            UIColor * shadowColor = [[TiUtils colorValue:[args objectForKey:@"shadowColor"]] _color];
+            [self.layer setShadowColor:[shadowColor CGColor]];            
+        }
+
+
+// UIColor *c = [[TiUtils colorValue:color] _color];
+
+
+		// UIColor * barColor = [[TiUtilscolorValue:[self valueForUndefinedKey:@"barColor"]] _color];
+		
+
+
     }
 }
 
