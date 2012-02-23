@@ -14,10 +14,6 @@
     {
         self.layer.masksToBounds = NO; 
         
-
-
-
-
         if ([args objectForKey:@"shadowOffset"] != nil) {
             CGPoint p = [TiUtils pointValue: [args objectForKey:@"shadowOffset"]];
             CGSize shadowOffset = {p.x,p.y};
@@ -36,13 +32,9 @@
             [self.layer setShadowColor:[shadowColor CGColor]];            
         }
 
-
-// UIColor *c = [[TiUtils colorValue:color] _color];
-
-
-		// UIColor * barColor = [[TiUtilscolorValue:[self valueForUndefinedKey:@"barColor"]] _color];
-		
-
+		// improve performance
+		[self.layer setShouldRasterize:YES ];
+		// [self.layer setShadowPath:[[UIBezierPath bezierPathWithRect:[self bounds] ] CGPath ] ]; // not working yet
 
     }
 }

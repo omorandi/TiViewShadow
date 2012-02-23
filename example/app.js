@@ -7,6 +7,7 @@ var view = Ti.UI.createView({
     width:100,
     left:100,
     top:10,
+	borderRadius:20,
     backgroundColor:"green",
     shadow:{
         shadowRadius:10,
