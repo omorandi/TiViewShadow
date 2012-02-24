@@ -33,8 +33,18 @@
         }
 
 		// improve performance
-		[self.layer setShouldRasterize:YES ];
+
 		// [self.layer setShadowPath:[[UIBezierPath bezierPathWithRect:[self bounds] ] CGPath ] ]; // not working yet
+		
+		
+		if ([args objectForKey:@"shadowPath"] != nil) {
+            CGRect shadowRect = [TiUtils rectValue:[args objectForKey:@"shadowPath"]] ;
+            [self.layer setShadowPath:[[UIBezierPath bezierPathWithRect:shadowRect ] CGPath]]; 
+        }
+
+        if ([args objectForKey:@"rasterize"] != nil) {
+            [self.layer setShouldRasterize: [TiUtils boolValue:[args objectForKey:@"rasterize"] ]];
+        }
 
     }
 }

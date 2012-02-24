@@ -12,7 +12,9 @@ var view = Ti.UI.createView({
     shadow:{
         shadowRadius:10,
         shadowOpacity:0.5,
-        shadowOffset:{x:5, y:10}
+        shadowOffset:{x:10, y:10},
+        shadowPath:{x:0, y:0, width:100, height:100}, // this improves performance a lot, and is a temporary solution until we find how to get the element's boundaries
+        rasterize:true // this should improve performance but only if there is no animation that affect the element
     }
 })
  
