@@ -26,6 +26,26 @@
         if ([args objectForKey:@"shadowOpacity"] != nil) {
             self.layer.shadowOpacity = [TiUtils floatValue:[args objectForKey:@"shadowOpacity"]];            
         }
+
+        if ([args objectForKey:@"shadowColor"] != nil) {
+            UIColor * shadowColor = [[TiUtils colorValue:[args objectForKey:@"shadowColor"]] _color];
+            [self.layer setShadowColor:[shadowColor CGColor]];            
+        }
+
+		// improve performance
+
+		// [self.layer setShadowPath:[[UIBezierPath bezierPathWithRect:[self bounds] ] CGPath ] ]; // not working yet
+		
+		
+		if ([args objectForKey:@"shadowPath"] != nil) {
+            CGRect shadowRect = [TiUtils rectValue:[args objectForKey:@"shadowPath"]] ;
+            [self.layer setShadowPath:[[UIBezierPath bezierPathWithRect:shadowRect ] CGPath]]; 
+        }
+
+        if ([args objectForKey:@"rasterize"] != nil) {
+            [self.layer setShouldRasterize: [TiUtils boolValue:[args objectForKey:@"rasterize"] ]];
+        }
+
     }
 }
 
