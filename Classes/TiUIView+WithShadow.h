@@ -3,7 +3,6 @@
 
 @interface TiUIView (WithShadow)
 
-
 -(void)setShadow_:(id)args;
 
 @end

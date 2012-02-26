@@ -1,5 +1,3 @@
-require('ti.viewshadow');
-
 var win = Ti.UI.createWindow({backgroundColor:'#fff'});
  
 var view = Ti.UI.createView({
@@ -10,16 +8,14 @@ var view = Ti.UI.createView({
 	borderRadius:20,
     backgroundColor:"green",
     shadow:{
-        shadowRadius:10,
+        shadowRadius:2,
         shadowOpacity:0.5,
-        shadowOffset:{x:10, y:10},
-        shadowPath:{x:0, y:0, width:100, height:100}, // this improves performance a lot, and is a temporary solution until we find how to get the element's boundaries
-        rasterize:true // this should improve performance but only if there is no animation that affect the element
+        shadowOffset:{x:4, y:4},
     }
 })
  
 var btn = Ti.UI.createButton({
-    title:'Shadow from module',
+    title:'Button with shadow',
     height:60,
     width:200,
     left:60,
@@ -47,7 +43,7 @@ var lbl = Ti.UI.createLabel({
 });
  
 lbl.setShadow({
-    shadowRadius:5,
+    shadowRadius:3,
     shadowOpacity:1,
     shadowOffset:{x:0, y:0},
 	shadowColor:'#00f'
