@@ -2,11 +2,11 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 0.1
-description: My module
-author: Your Name
-license: Specify your license
-copyright: Copyright (c) 2012 by Your Company
+version: 0.2
+description: TiViewShadow module. Allows adding drop shadow to any Ti.UI.View
+author: Javier Rayon, Olivier Morandi, Daniel Tamas
+license: MIT License
+copyright: Copyright (c) 2012 by Javier Rayon, Olivier Morandi, Daniel Tamas
 
 
 # these should not be edited

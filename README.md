@@ -16,15 +16,15 @@ First, you must have your XCode and Titanium Mobile SDKs in place, and have at l
 
 The build process can be launched using the build.py script that you find in the module's code root directory. 
 
-As a result, the ti.viewshadow-iphone-0.1.zip file will be generated. 
+As a result, the ti.viewshadow-iphone-0.2.zip file will be generated. 
 
 **NOTE: if your Titanium sdk resides in the root `/Library/Application Support/Titanium/` directory, you need to change the value of the `TITANIUM SDK` variable in `titanium.xcconfig`**
 
 
 ### INSTALL ###
-You can either copy the module package (ti.viewshadow-iphone-0.1.zip) to `$HOME/Library/Application\ Support/Titanium` and reference the module in your application (the Titanium SDK will automatically unzip the file in the right place), or manually launch the command:
+You can either copy the module package (ti.viewshadow-iphone-0.2.zip) to `$HOME/Library/Application\ Support/Titanium` and reference the module in your application (the Titanium SDK will automatically unzip the file in the right place), or manually launch the command:
 
-     unzip -uo ti.viewshadow-iphone-0.1.zip -d $HOME/Library/Application\ Support/Titanium/
+     unzip -uo ti.viewshadow-iphone-0.2.zip -d $HOME/Library/Application\ Support/Titanium/
 
 
 **NOTE: if your Titanium sdk resides in the root `/Library/Application Support/Titanium/` directory, change the above command accordingly**
@@ -34,7 +34,7 @@ You can either copy the module package (ti.viewshadow-iphone-0.1.zip) to `$HOME/
 Simply add the following lines to your `tiapp.xml` file:
     
     <modules>
-        <module version="0.1" platform="iphone">ti.viewshadow</module> 
+        <module version="0.2" platform="iphone">ti.viewshadow</module> 
     </modules>
 
 and add this line in your app.js file:
@@ -46,11 +46,12 @@ The module provides no public api. It's simply used for extending the TiUIView c
 ## Authors
 * Javier Rayon: [https://github.com/jaraen](https://github.com/jaraen ) (@jrayon)
 * Olivier Morandi: [https://github.com/omorandi](https://github.com/omorandi) (@olivier_morandi)
+* Daniel Tamas: [https://github.com/rborn](https://github.com/rborn) (@dan_tamas)
 
 
 ## License
 
-    Copyright (c) 2012 Javier Rayon and Olivier Morandi
+    Copyright (c) 2012 Javier Rayon, Olivier Morandi, Daniel Tamas
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
