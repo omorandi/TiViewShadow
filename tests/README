@@ -19,3 +19,13 @@ actual: when applying a drop shadow the whole view appears blurry on retina disp
 expected: no blur
 
 */
+
+The name of the file should follow the pattern:
+
+test-<github_issue_num>.js
+
+For example:
+
+test-4.js
+
+
