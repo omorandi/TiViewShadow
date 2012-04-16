@@ -1,0 +1,21 @@
+Add tests here.
+A test file is ideally a CommonJS module that returns a factory method for creating the view under test.
+Something along the lines of:
+
+exports.createView = function() {
+	
+	//code that creates and sets up the view
+	
+};
+
+
+A comment is also required specifying the actual behavior and the expected behavior.
+For example:
+
+/*
+
+actual: when applying a drop shadow the whole view appears blurry on retina displays
+
+expected: no blur
+
+*/
