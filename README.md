@@ -9,7 +9,7 @@ The code implementing this feature has been originally posted by Javier Rayon [h
 The module is licensed under the MIT license.
 
 
-TITANIUM 2 SUPPORT: Titanium 2 introduces some breaking layout changes. On iOS, now views are clipped to their bounds. Since shadows are dropped outside the view bounds, this affects seriously to this module. We tried to to avoid this behavior, but in some cases the shadow does not work as expected. While we find a solution, consider that in these cases:
+TITANIUM 2 SUPPORT: Titanium 2 introduces some breaking layout changes. On iOS, now views are clipped to their bounds. Since shadows are dropped outside the view bounds, this affects seriously to this module. We tried to avoid this behavior, but in some cases the shadow does not work as expected. While we find a solution, consider that in these cases:
 
 - Using Ti.UI.SIZE in a parent view, could cut the shadows of its children.
 - A view with solid background and with children views can not drop shadow itself (but the children will do)
@@ -41,7 +41,7 @@ You can either copy the module package (ti.viewshadow-iphone-0.3.zip) to `$HOME/
 Simply add the following lines to your `tiapp.xml` file:
     
     <modules>
-        <module version="0.2" platform="iphone">ti.viewshadow</module> 
+        <module version="0.3" platform="iphone">ti.viewshadow</module> 
     </modules>
 
 and add this line in your app.js file:
@@ -53,14 +53,19 @@ The module provides no public api. It's simply used for extending the TiUIView c
 ## Changelog
 
 0.3:
+
  - Added support for retina displays, both iPhone and iPad
+
  - Added (not full) support for Titanium 2. 
 
 0.2:
+
  - added colorShadow property
+
  - performance improved using rasterization and shadowPath
 
 0.1:
+
  - first version, supporting shadowOffset, shadowRadius and shadowOpacity properties.
 
 ## Authors
