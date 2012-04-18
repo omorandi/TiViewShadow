@@ -8,6 +8,13 @@ The code implementing this feature has been originally posted by Javier Rayon [h
 
 The module is licensed under the MIT license.
 
+
+TITANIUM 2 SUPPORT: Titanium 2 introduces some breaking layout changes. On iOS, now views are clipped to their bounds. Since shadows are dropped outside the view bounds, this affects seriously to this module. We tried to to avoid this behavior, but in some cases the shadow does not work as expected. While we find a solution, consider that in these cases:
+
+- Using Ti.UI.SIZE in a parent view, could cut the shadows of its children.
+- A view with solid background and with children views can not drop shadow itself (but the children will do)
+
+
 ## Building and installing the TiViewShadow Module ##
 
 ### BUILD ###
@@ -16,15 +23,15 @@ First, you must have your XCode and Titanium Mobile SDKs in place, and have at l
 
 The build process can be launched using the build.py script that you find in the module's code root directory. 
 
-As a result, the ti.viewshadow-iphone-0.2.zip file will be generated. 
+As a result, the ti.viewshadow-iphone-0.3.zip file will be generated. 
 
 **NOTE: if your Titanium sdk resides in the root `/Library/Application Support/Titanium/` directory, you need to change the value of the `TITANIUM SDK` variable in `titanium.xcconfig`**
 
 
 ### INSTALL ###
-You can either copy the module package (ti.viewshadow-iphone-0.2.zip) to `$HOME/Library/Application\ Support/Titanium` and reference the module in your application (the Titanium SDK will automatically unzip the file in the right place), or manually launch the command:
+You can either copy the module package (ti.viewshadow-iphone-0.3.zip) to `$HOME/Library/Application\ Support/Titanium` and reference the module in your application (the Titanium SDK will automatically unzip the file in the right place), or manually launch the command:
 
-     unzip -uo ti.viewshadow-iphone-0.2.zip -d $HOME/Library/Application\ Support/Titanium/
+     unzip -uo ti.viewshadow-iphone-0.3.zip -d $HOME/Library/Application\ Support/Titanium/
 
 
 **NOTE: if your Titanium sdk resides in the root `/Library/Application Support/Titanium/` directory, change the above command accordingly**
@@ -42,6 +49,19 @@ and add this line in your app.js file:
 	require('ti.viewshadow');
 
 The module provides no public api. It's simply used for extending the TiUIView class provided by the Ti SDK with additional functionality.
+
+## Changelog
+
+0.3:
+ - Added support for retina displays, both iPhone and iPad
+ - Added (not full) support for Titanium 2. 
+
+0.2:
+ - added colorShadow property
+ - performance improved using rasterization and shadowPath
+
+0.1:
+ - first version, supporting shadowOffset, shadowRadius and shadowOpacity properties.
 
 ## Authors
 * Javier Rayon: [https://github.com/jaraen](https://github.com/jaraen ) (@jrayon)
