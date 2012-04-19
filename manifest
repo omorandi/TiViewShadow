@@ -2,7 +2,7 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 0.2
+version: 0.3
 description: TiViewShadow module. Allows adding drop shadow to any Ti.UI.View
 author: Javier Rayon, Olivier Morandi, Daniel Tamas
 license: MIT License
