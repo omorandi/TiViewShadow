@@ -35,6 +35,7 @@
     */
     
     NSError *error = nil;
+    
     [TiUIView jr_swizzleMethod:@selector(checkBounds) withMethod:@selector(checkBoundsAlt) error:&error];
     if (error != nil) {
         NSLog(@"[ERROR] %@", [error localizedDescription]);
@@ -44,12 +45,11 @@
 -(void)checkBoundsAlt
 {
     [self checkBoundsAlt];
-    
+
     if ([self.proxy valueForUndefinedKey:@"shadow"])
     {
-        [self.layer setShadowPath:[[UIBezierPath bezierPathWithRect:self.bounds ] CGPath]];         
+        [self.layer setShadowPath:[[UIBezierPath bezierPathWithRect:self.bounds ] CGPath]];
     }
-    
 }
 
 
@@ -58,11 +58,25 @@
 
 
 
--(void)setShadow_:(id)args
+-(void)setShadow_:(id)args;
 {
     if(args != nil)
     {
         self.layer.masksToBounds = NO; 
+        self.clipsToBounds = NO;
+       // self.superview.layer.masksToBounds = NO; //trying to avoid be clipped by parent view, but does not work
+      //  self.superview.clipsToBounds = NO;
+        
+        //Support for retina display
+        CGFloat scale;
+        if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+            scale=[[UIScreen mainScreen] scale];
+        } else {
+            scale=1; //only called on iPad.
+        }
+        
+        self.layer.rasterizationScale = scale;
+
         [self.layer setShouldRasterize:YES];
         
         if ([args objectForKey:@"shadowOffset"] != nil) {
@@ -82,6 +96,7 @@
             UIColor * shadowColor = [[TiUtils colorValue:[args objectForKey:@"shadowColor"]] _color];
             [self.layer setShadowColor:[shadowColor CGColor]];            
         }
+             
     }
 }
 
