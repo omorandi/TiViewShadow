@@ -11,7 +11,7 @@
 @implementation TiUIView (WithShadow)
 
 
-+(void)initialize
++(void)load
 {
     /*
      HERE we extend the TiUIView checkBounds through the method swizzling technique described here:
@@ -58,7 +58,7 @@
 
 
 
--(void)setShadow_:(id)args;
+-(void)setShadow_:(id)args
 {
     if(args != nil)
     {
