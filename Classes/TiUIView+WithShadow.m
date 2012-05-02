@@ -46,10 +46,23 @@
 {
     [self checkBoundsAlt];
 
-    if ([self.proxy valueForUndefinedKey:@"shadow"])
+    NSDictionary *shadowProps = [self.proxy valueForUndefinedKey:@"shadow"];
+   
+    if (shadowProps == nil)
+        return;
+    
+    NSNumber *radius = [self.proxy valueForUndefinedKey:@"borderRadius"];;
+    UIBezierPath *shadowPath = nil;
+    if (radius != nil) 
     {
-        [self.layer setShadowPath:[[UIBezierPath bezierPathWithRect:self.bounds ] CGPath]];
+        shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:[radius floatValue]];
     }
+    else 
+    {
+        shadowPath = [UIBezierPath bezierPathWithRect:self.bounds];
+    }
+    
+    [self.layer setShadowPath:[shadowPath CGPath]];
 }
 
 
@@ -85,11 +98,11 @@
             
             self.layer.shadowOffset = shadowOffset;
         }
-        if ([args objectForKey:@"shadowRadius"] != nil) {
-            self.layer.shadowRadius = [TiUtils floatValue:[args objectForKey:@"shadowRadius"]];
-        }
         if ([args objectForKey:@"shadowOpacity"] != nil) {
             self.layer.shadowOpacity = [TiUtils floatValue:[args objectForKey:@"shadowOpacity"]];            
+        }
+        if ([args objectForKey:@"shadowRadius"] != nil) {
+            self.layer.shadowRadius = [TiUtils floatValue:[args objectForKey:@"shadowRadius"]];
         }
 
         if ([args objectForKey:@"shadowColor"] != nil) {

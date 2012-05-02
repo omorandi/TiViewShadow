@@ -23,15 +23,15 @@ First, you must have your XCode and Titanium Mobile SDKs in place, and have at l
 
 The build process can be launched using the build.py script that you find in the module's code root directory. 
 
-As a result, the ti.viewshadow-iphone-0.3.zip file will be generated. 
+As a result, the ti.viewshadow-iphone-0.4.zip file will be generated. 
 
 **NOTE: if your Titanium sdk resides in the root `/Library/Application Support/Titanium/` directory, you need to change the value of the `TITANIUM SDK` variable in `titanium.xcconfig`**
 
 
 ### INSTALL ###
-You can either copy the module package (ti.viewshadow-iphone-0.3.zip) to `$HOME/Library/Application\ Support/Titanium` and reference the module in your application (the Titanium SDK will automatically unzip the file in the right place), or manually launch the command:
+You can either copy the module package (ti.viewshadow-iphone-0.4.zip) to `$HOME/Library/Application\ Support/Titanium` and reference the module in your application (the Titanium SDK will automatically unzip the file in the right place), or manually launch the command:
 
-     unzip -uo ti.viewshadow-iphone-0.3.zip -d $HOME/Library/Application\ Support/Titanium/
+     unzip -uo ti.viewshadow-iphone-0.4.zip -d $HOME/Library/Application\ Support/Titanium/
 
 
 **NOTE: if your Titanium sdk resides in the root `/Library/Application Support/Titanium/` directory, change the above command accordingly**
@@ -41,7 +41,7 @@ You can either copy the module package (ti.viewshadow-iphone-0.3.zip) to `$HOME/
 Simply add the following lines to your `tiapp.xml` file:
     
     <modules>
-        <module version="0.3" platform="iphone">ti.viewshadow</module> 
+        <module version="0.4" platform="iphone">ti.viewshadow</module> 
     </modules>
 
 and add this line in your app.js file:
@@ -51,6 +51,10 @@ and add this line in your app.js file:
 The module provides no public api. It's simply used for extending the TiUIView class provided by the Ti SDK with additional functionality.
 
 ## Changelog
+
+0.4:
+
+  - View's borderRadius now affects also the shadow's shape
 
 0.3:
 

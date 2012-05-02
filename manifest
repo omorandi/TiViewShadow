@@ -2,7 +2,7 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 0.3
+version: 0.4
 description: TiViewShadow module. Allows adding drop shadow to any Ti.UI.View
 author: Javier Rayon, Olivier Morandi, Daniel Tamas
 license: MIT License
@@ -14,4 +14,4 @@ name: tiviewshadow
 moduleid: ti.viewshadow
 guid: 03caadce-b6e4-414e-8dae-f24c855f0dd8
 platform: iphone
-minsdk: u2-1.8.0
+minsdk: 1.8.2
