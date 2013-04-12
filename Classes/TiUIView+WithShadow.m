@@ -69,6 +69,15 @@
 //this code is by Javier Rayon and was originally posted in the Titanium Q&A forum:
 //http://developer.appcelerator.com/question/130784/trick-drop-real-shadows-in-titanium-ios
 
+-(void)setClipsToBounds:(BOOL)clipsToBounds
+{
+    if (self.layer.shadowOpacity > 0) {
+        // if there is shadow, we regret to clip
+        [super setClipsToBounds:NO];
+    } else {
+        [super setClipsToBounds:clipsToBounds];
+    }
+}
 
 
 -(void)setShadow_:(id)args
